@@ -21,11 +21,11 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-  int n, newNumber;
+int n, newNumber;
 
-  srand(time(0));
-  n = rand() - RAND_MAX / 2;
-  newNumber = n % 10;
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+newNumber = n % 10;
 if (newNumber > 5)
 {
 printf("Last digit of %d is %d and is greater than 5\n", n, newNumber);
@@ -41,7 +41,7 @@ else
 printf("Last digit of %d is %d and is 0\n", n, newNumber);
 }
 
- return (0);
+return (0);
 }
 
 
