@@ -1,26 +1,18 @@
-#include <stdio.h>
-  #include "holberton.h"
+#include "holberton.h"
+
 /**
- * main - Entry point for printfunc
-*tion /prints alphabet
-*print_alphabet- prints alphabet in lowercase. 
-*returns void 
-*
-*return- main function returns an intof 0
-*/
-int main(void)
+ * print_alphabet - prints lower alphabetical from a to z
+ *
+ * Return: Void.
+ */
+void print_alphabet(void)
 {
-char ch;
-void print_alphabet(void);
+char c;
 
-for (ch = 'a' ; ch = 'z' ; ch++)
-
+for (c = 'a'; c <= 'z'; c++)
 {
-_putchar(ch);
-print_alphabet();
+_putchar(c);
 }
-return (0);
+_putchar('\n');
 }
-
-
 
