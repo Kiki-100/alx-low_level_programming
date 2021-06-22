@@ -1,15 +1,22 @@
-#include <stdio.h>
+#include "holberton.h"
+#include <string.h>
 /**
- * main-program that prints Holberton,followed by a new line
- *Return: 0
-*/
-
-/* betty style doc for function main goes there */
+ * main - print Holberton
+ * holberton[]: array of char that contain holberton
+ *
+ * Return: 0 at the end of the program
+ */
 int main(void)
 {
-char ch = "Holberton"
-putchar(ch);
-
+_putchar('H');
+_putchar('o');
+_putchar('l');
+_putchar('b');
+_putchar('e');
+_putchar('r');
+_putchar('t');
+_putchar('o');
+_putchar('n');
+_putchar('\n');
 return (0);
 }
-
