@@ -1,10 +1,7 @@
-#ifndef HOLBERTO_H
-#define HOLBERTON_H
-
-/*Prints holberton*/
-int _putchar(char);
-
-/*Description: for alphabet_lowercase*/
+int _putchar(char c);
 void print_alphabet(void);
-
-#endif
+void print_alphabet_x10(void);
+int _islower(int c);
+int _isalpha(int c);
+int print_sign(int n);
+ 
