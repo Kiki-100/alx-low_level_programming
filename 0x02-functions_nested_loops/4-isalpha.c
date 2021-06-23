@@ -1,13 +1,20 @@
 #include "holberton.h"
 
 /**
- * _isalpha - checks if input character is alphacahracter
+ * _isalpha - checks if input character is alphacharacter
  * @c: the character to test
  *
  * Return: 1 if c is a letter, 0 otherwise
  */
 int _isalpha(int c)
 {
-
-return ((c >= 'a' && c <= 'z') ||(c >= 'A' && c <= 'Z'));
+if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+{
+return (1);
 }
+else
+{
+return (0);
+}
+}
+
