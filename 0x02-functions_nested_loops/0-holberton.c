@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- *main- prints Holberton 
- *Description: uses only _putchar
- *Return: void 
+ * main - prints holberton
+ * Description: uses only _putchar
+ * Return: void
  */
 int main(void)
 {
@@ -15,6 +15,7 @@ _putchar ('r');
 _putchar ('t');
 _putchar ('o');
 _putchar ('n');
+_putchar ('\n');
 
 return (0);
 }
