@@ -1,4 +1,4 @@
-include "holberton.h"
+#include "holberton.h"
 
 /**
  * times_table - prints the times-table starting with 0
@@ -25,7 +25,6 @@ if (j < 9)
 _putchar(',');
 _putchar(' ');
 }
-
 _putchar('\n');
 }
 }
