@@ -29,7 +29,8 @@ return (1);
 else if (p[l] != p[r])
 return (0);
 else
-return (check_palindrome(l + 1, r -1, p));
+return (check_palindrome(l + 1, r -
+ 1, p));
 }
 
 /**
