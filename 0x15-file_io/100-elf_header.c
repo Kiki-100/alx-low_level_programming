@@ -135,25 +135,25 @@ printf("%02x\n", ehdr->e_ident[15]);
  */
 int printClass(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  Class:");
-  printf("                             ");
-  switch (ehdr->e_ident[EI_CLASS])
-    {
-    case ELFCLASS32:
-      printf("ELF32\n");
-      return (32);
-    case ELFCLASS64:
-      printf("ELF64\n");
-      return (64);
-    case ELFCLASSNONE:
-      printf("Invalid class\n");
-      return (64);
-    default:
-      printf("<unknown: %x>\n", ehdr->e_ident[EI_CLASS]);
-      return (64);
-    }
+printf("  Class:");
+printf(" ");
+switch (ehdr->e_ident[EI_CLASS])
+{
+case ELFCLASS32:
+printf("ELF32\n");
+return (32);
+case ELFCLASS64:
+printf("ELF64\n");
+return (64);
+case ELFCLASSNONE:
+printf("Invalid class\n");
+return (64);
+default:
+printf("<unknown: %x>\n", ehdr->e_ident[EI_CLASS]);
+return (64);
+}
 }
 
 /**
@@ -164,25 +164,25 @@ int printClass(void *header)
  */
 int printData(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  Data:");
-  printf("                              ");
-  switch (ehdr->e_ident[EI_DATA])
-    {
-    case ELFDATANONE:
-      printf("Invalid ELF data\n");
-      return (1);
-    case ELFDATA2LSB:
-      printf("2's complement, little endian\n");
-      return (1);
-    case ELFDATA2MSB:
-      printf("2's complement, big endian\n");
-      return (2);
-    default:
-      printf("<unknown: %x>\n", ehdr->e_ident[EI_DATA]);
-      return (1);
-    }
+printf("  Data:");
+printf("                        ");
+switch (ehdr->e_ident[EI_DATA])
+{
+case ELFDATANONE:
+printf("Invalid ELF data\n");
+return (1);
+case ELFDATA2LSB:
+printf("2's complement, little endian\n");
+return (1);
+case ELFDATA2MSB:
+printf("2's complement, big endian\n");
+return (2);
+default:
+printf("<unknown: %x>\n", ehdr->e_ident[EI_DATA]);
+return (1);
+}
 }
 
 /**
@@ -192,22 +192,22 @@ int printData(void *header)
  */
 void printVersion(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  Version:");
-  printf("                           ");
-  switch (ehdr->e_ident[EI_VERSION])
-    {
-    case EV_NONE:
-      printf("Invalid version");
-      break;
-    case EV_CURRENT:
-      printf("1 (current)");
-      break;
-    default:
-      printf("<unknown: %d>", ehdr->e_ident[EI_VERSION]);
-    }
-  printf("\n");
+printf("  Version:");
+printf("                        ");
+switch (ehdr->e_ident[EI_VERSION])
+{
+case EV_NONE:
+printf("Invalid version");
+break;
+case EV_CURRENT:
+printf("1 (current)");
+break;
+default:
+printf("<unknown: %d>", ehdr->e_ident[EI_VERSION]);
+}
+printf("\n");
 }
 
 /**
@@ -217,46 +217,45 @@ void printVersion(void *header)
  */
 void printOS(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  OS/ABI:");
-  printf("                            ");
-  switch (ehdr->e_ident[EI_OSABI])
-    {
-    case 0:
-      printf("UNIX - System V"); break;
-    case ELFOSABI_HPUX:
-      printf("UNIX - HP-UX"); break;
-    case ELFOSABI_NETBSD:
-      printf("UNIX - NetBSD"); break;
-    case 3:
-      printf("UNIX - GNU"); break;
-    case ELFOSABI_SOLARIS:
-      printf("UNIX - Solaris"); break;
-    case ELFOSABI_AIX:
-      printf("UNIX - AIX"); break;
-    case ELFOSABI_IRIX:
-      printf("UNIX - IRIX"); break;
-    case ELFOSABI_FREEBSD:
-      printf("UNIX - FreeBSD"); break;
-    case ELFOSABI_TRU64:
-      printf("UNIX - TRU64"); break;
-    case ELFOSABI_MODESTO:
-      printf("Novell - Modesto"); break;
-    case ELFOSABI_OPENBSD:
-      printf("UNIX - OpenBSD"); break;
-    case 13:
-      printf("VMS - OpenVMS"); break;
-    case 14:
-      printf("HP - Non-Stop Kernel"); break;
-    case 15:
-      printf("AROS"); break;
-    case 16:
-      printf("FenixOS"); break;
-    default:
-      printf("<unknown: %x>", ehdr->e_ident[EI_OSABI]);
-    }
-  printf("\n");
+printf("  OS/ABI:");
+printf("                        ");
+switch (ehdr->e_ident[EI_OSABI])   {
+case 0:
+printf("UNIX - System V"); break;
+case ELFOSABI_HPUX:
+printf("UNIX - HP-UX"); break;
+case ELFOSABI_NETBSD:
+printf("UNIX - NetBSD"); break;
+case 3:
+printf("UNIX - GNU"); break;
+case ELFOSABI_SOLARIS:
+printf("UNIX - Solaris"); break;
+case ELFOSABI_AIX:
+printf("UNIX - AIX"); break;
+case ELFOSABI_IRIX:
+printf("UNIX - IRIX"); break;
+case ELFOSABI_FREEBSD:
+printf("UNIX - FreeBSD"); break;
+case ELFOSABI_TRU64:
+printf("UNIX - TRU64"); break;
+case ELFOSABI_MODESTO:
+printf("Novell - Modesto"); break;
+case ELFOSABI_OPENBSD:
+printf("UNIX - OpenBSD"); break;
+case 13:
+printf("VMS - OpenVMS"); break;
+case 14:
+printf("HP - Non-Stop Kernel"); break;
+case 15:
+printf("AROS"); break;
+case 16:
+printf("FenixOS"); break;
+default:
+printf("<unknown: %x>", ehdr->e_ident[EI_OSABI]);
+}
+printf("\n");
 }
 
 /**
@@ -266,12 +265,12 @@ void printOS(void *header)
  */
 void printABIVersion(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  ABI Version:");
-  printf("                       ");
-  printf("%d", ehdr->e_ident[EI_ABIVERSION]);
-  printf("\n");
+printf("  ABI Version:");
+printf("                       ");
+printf("%d", ehdr->e_ident[EI_ABIVERSION]);
+printf("\n");
 }
 
 /**
@@ -281,31 +280,31 @@ void printABIVersion(void *header)
  */
 void printType(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  Type:");
-  printf("                              ");
-  switch (ehdr->e_type)
-    {
-    case ET_NONE:
-      printf("NONE (None)");
-      break;
-    case ET_REL:
-      printf("REL (Relocatable file)");
-      break;
-    case ET_EXEC:
-      printf("EXEC (Executable file)");
-      break;
-    case ET_DYN:
-      printf("DYN (Shared object file)");
-      break;
-    case ET_CORE:
-      printf("CORE (Core file)");
-      break;
-    default:
-      printf("<unknown: %x>", ehdr->e_type);
-    }
-  printf("\n");
+printf("  Type:");
+printf("                        ");
+switch (ehdr->e_type)
+{
+case ET_NONE:
+printf("NONE (None)");
+break;
+case ET_REL:
+printf("REL (Relocatable file)");
+break;
+case ET_EXEC:
+printf("EXEC (Executable file)");
+break;
+case ET_DYN:
+printf("DYN (Shared object file)");
+break;
+case ET_CORE:
+printf("CORE (Core file)");
+break;
+default:
+printf("<unknown: %x>", ehdr->e_type);
+}
+printf("\n");
 }
 
 /**
@@ -315,11 +314,11 @@ void printType(void *header)
  */
 void printEntry(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
+Elf64_Ehdr *ehdr = header;
 
-  printf("  Entry point address:");
-  printf("               ");
-  printf("0x%x\n", (unsigned int) ehdr->e_entry);
+printf("  Entry point address:");
+printf("               ");
+printf("0x%x\n", (unsigned int) ehdr->e_entry);
 }
 
 /**
@@ -329,33 +328,33 @@ void printEntry(void *header)
  */
 void bigType(void *header)
 {
-  Elf64_Ehdr *ehdr = header;
-  uint16_t type;
+Elf64_Ehdr *ehdr = header;
+uint16_t type;
 
-  type = __bswap_16(ehdr->e_type);
-  printf("  Type:");
-  printf("                              ");
-  switch (type)
-    {
-    case ET_NONE:
-      printf("NONE (None)");
-      break;
-    case ET_REL:
-      printf("REL (Relocatable file)");
-      break;
-    case ET_EXEC:
-      printf("EXEC (Executable file)");
-      break;
-    case ET_DYN:
-      printf("DYN (Shared object file)");
-      break;
-    case ET_CORE:
-      printf("CORE (Core file)");
-      break;
-    default:
-      printf("<unknown: %x>", type);
-    }
-  printf("\n");
+type = __bswap_16(ehdr->e_type);
+printf("  Type:");
+printf("                        ");
+switch (type)
+{
+case ET_NONE:
+printf("NONE (None)");
+break;
+case ET_REL:
+printf("REL (Relocatable file)");
+break;
+case ET_EXEC:
+printf("EXEC (Executable file)");
+break;
+case ET_DYN:
+printf("DYN (Shared object file)");
+break;
+case ET_CORE:
+printf("CORE (Core file)");
+break;
+default:
+printf("<unknown: %x>", type);
+}
+printf("\n");
 }
 
 /**
@@ -366,28 +365,26 @@ void bigType(void *header)
  */
 void bigEntry(void *header, int arch)
 {
-  Elf64_Ehdr *ehdr;
-  Elf32_Ehdr *ehdr32;
-  Elf64_Addr entry;
-  Elf32_Addr entry32;
+Elf64_Ehdr *ehdr;
+Elf32_Ehdr *ehdr32;
+Elf64_Addr entry;
+Elf32_Addr entry32;
 
-  if (arch == 64)
-    {
-      ehdr = header;
-      entry = __bswap_64(ehdr->e_entry);
-      printf("  Entry point address:");
-      printf("               ");
-      printf("0x%lx\n", entry);
-    }
-  else
-    {
-      ehdr32 = header;
-      entry32 = __bswap_32(ehdr32->e_entry);
-      printf("  Entry point address:");
-      printf("               ");
-      printf("0x%x\n", entry32);
-    }
-
+if (arch == 64)
+{
+ehdr = header;
+entry = __bswap_64(ehdr->e_entry);
+printf("  Entry point address:");
+printf("               ");
+printf("0x%lx\n", entry);
+}
+else
+{
+ehdr32 = header;
+entry32 = __bswap_32(ehdr32->e_entry);
+printf("  Entry point address:");
+printf("               ");
+printf("0x%x\n", entry32);
 }
 
 
@@ -399,8 +396,8 @@ void bigEntry(void *header, int arch)
  */
 void error(char *errmsg, int exitcode)
 {
-  write(STDERR_FILENO, errmsg, _strlen(errmsg));
-  exit(exitcode);
+write(STDERR_FILENO, errmsg, _strlen(errmsg));
+exit(exitcode);
 }
 
 /**
@@ -412,10 +409,10 @@ void error(char *errmsg, int exitcode)
  */
 int _strlen(char *s)
 {
-  int i;
+int i;
 
-  i = 0;
-  while (s[i] != '\0')
-    i++;
-  return (i);
+i = 0;
+while (s[i] != '\0')
+i++;
+return (i);
 }
